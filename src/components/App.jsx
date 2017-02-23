@@ -10,8 +10,11 @@ class App extends React.Component {
   }
 
   handleChildClick (video) {
-    console.log('VIDEO ', video);
     this.setState({currentVideo: video});
+  }
+
+  handleSubmit (videos) {
+    this.setState({videoList: videos});
   }
 
   render() { 
