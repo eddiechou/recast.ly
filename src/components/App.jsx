@@ -9,17 +9,16 @@ class App extends React.Component {
     };
   }
 
-  handleChildClick (index, event) {
-    console.log(event);
-    console.log(index);
-    this.state.currentVideo = window.exampleVideoData[index];
+  handleChildClick (video) {
+    console.log('VIDEO ', video);
+    this.setState({currentVideo: video});
   }
 
   render() { 
     return (<div>
               <Nav />
               <div className="col-md-7">
-                <VideoPlayer video = {this.state.currentVideo} state = {this.state}/>
+                <VideoPlayer video = {this.state.currentVideo}/>
               </div>
               <div className="col-md-5">
                 <VideoList clickHandler = {this.handleChildClick.bind(this)} videos = {window.exampleVideoData} state = {this.state}/>
