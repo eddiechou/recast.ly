@@ -6,12 +6,9 @@ class App extends React.Component {
       currentVideo: window.exampleVideoData[0],
       videoList: window.exampleVideoData
     };
-    
-    // props.searchYouTube(options, this.handleSubmit);
-    // window.searchYouTube(options, this.handleSubmit);
   }
 
-  componentWillMount () {
+  componentDidMount () {
     var options = {key: window.YOUTUBE_API_KEY, query: $('#searchBar').val(), max: 5};
     this.props.searchYouTube(options, this.handleSubmit.bind(this));
   }
@@ -26,7 +23,7 @@ class App extends React.Component {
 
   render() { 
     return (<div>
-              <Nav submitHandler = {this.handleSubmit.bind(this)}/>
+              <Nav searchYouTube = {this.props.searchYouTube} submitHandler = {this.handleSubmit.bind(this)}/>
               <div className="col-md-7">
                 <VideoPlayer video = {this.state.currentVideo}/>
               </div>

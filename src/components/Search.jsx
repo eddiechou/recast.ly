@@ -1,7 +1,7 @@
 var Search = (props) => (
   <div className="search-bar form-inline">
-    <input id = 'searchBar' className="form-control" type="text" />
-    <button type = 'submit' className="btn sm-down" onClick = {() => { window.searchYouTube({key: window.YOUTUBE_API_KEY, query: $('#searchBar').val(), max: 5}, props.submitHandler); }}>
+    <input id = 'searchBar' className="form-control" type="text" onChange = {() => { props.searchYouTube({key: window.YOUTUBE_API_KEY, query: $('#searchBar').val(), max: 5}, props.submitHandler); }} />
+    <button type = 'submit' className="btn hidden-sm-down">
       <span className="glyphicon glyphicon-search" ></span>
     </button>
   </div> 
